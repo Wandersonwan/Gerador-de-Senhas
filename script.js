@@ -11,25 +11,25 @@ let novaSenha = ""
 
 valueCaracteres.innerHTML = inputSlider.value
 
-inputSlider.oninput = function(){
+inputSlider.oninput = function () {
     valueCaracteres.innerHTML = this.value;
 }
 
-function generatePassword (){
+function generatePassword() {
     let pass = ""
 
-    for(let i = 0, n = charset.length; i < inputSlider.value ; ++i){
+    for (let i = 0, n = charset.length; i < inputSlider.value; ++i) {
         pass += charset.charAt(Math.floor(Math.random() * n));
     }
     containerPassword.classList.remove("hider")
     password.innerHTML = pass;
     novaSenha = pass;
 
-    
-}
-function copyPassword(){
-    navigator.clipboard.writeText(novaSenha)
-    
-}
 
+
+}
+function copyPassword() {
+    const senhaCopiada = navigator.clipboard.writeText(novaSenha)
+
+}
 
